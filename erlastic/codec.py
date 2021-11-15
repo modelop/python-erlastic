@@ -306,4 +306,4 @@ class ErlangTermEncoder(object):
                     pack_bytes([ATOM_EXT]), struct.pack(">H", len(obj.function)),
                     obj.function.encode('latin-1'), pack_bytes([SMALL_INTEGER_EXT,obj.arity])]
         else:
-            raise NotImplementedError("Unable to serialize %r" % obj)
+            raise NotImplementedError("Unable to serialize %r (type = %r)" % (obj, type(obj)))
